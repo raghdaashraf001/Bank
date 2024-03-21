@@ -20,7 +20,6 @@ public:
         this->name=name;
         this->id=id;
         this->password=password;
-
 	}
 
 	//setters
@@ -45,11 +44,7 @@ public:
 	}
 
 	//Methods:
-    string printInfo() {
-		cout << "Name : " << name << endl;
-		cout << "ID   : " << id << endl;
 
-	}
 
 	//Destructor
 	~Person() {

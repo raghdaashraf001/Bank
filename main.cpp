@@ -6,8 +6,5 @@ using namespace std;
 
 main(){
 
-Person p("WWW",225,"www225");
-cout<< p.printInfo();
-
 
 }
