@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1710990823 source:c:\users\eslam\desktop\bank-system\bank\main.cpp
+	<iostream>
+	<string>
+	"Person.h"
+
+1710990915 c:\users\eslam\desktop\bank-system\bank\include\person.h
+	<iostream>
+	<string>
+
+1710990883 source:c:\users\eslam\desktop\bank-system\bank\src\person.cpp
+	"Person.h"
+

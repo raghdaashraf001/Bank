@@ -1,15 +1,13 @@
 #include <iostream>
-
+#include <string>
+#include "Person.h"
 using namespace std;
 
-int main()
-{
-    int x;
-    cin >>x;
-    cout << "Bank system" << endl;
-    cout << "Thank you" << endl;
-    cout << "Thank you" << endl;
-cout << "Bank " << endl;
 
- return 0;
+main(){
+
+Person p("WWW",225,"www225");
+cout<< p.printInfo();
+
+
 }
