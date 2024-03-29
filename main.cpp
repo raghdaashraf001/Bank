@@ -5,6 +5,8 @@ using namespace std;
 
 
 main(){
-
+cout<<"Welcome to X Bank\n";
+system("pause");
+cout<<"Select Member:\n";
 
 }

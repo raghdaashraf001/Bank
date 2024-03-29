@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+//Validation Class:
 class Validation
 {
 public:
@@ -29,7 +31,7 @@ public:
 			if (p[i] >= 'A' && p[i] <= 'Z' || p[i] >= 'a' && p[i] <= 'z')
 				count++;
 		}
-		if (count < 5) {
+		if (count < 8) {
 			return false;
 		}
 		else if (count > 20) {
@@ -53,6 +55,8 @@ public:
 			return true;
 	}
 };
+//===================================================================================
+//Person Class:
 class Person
 {
 protected:
@@ -60,40 +64,54 @@ protected:
 	string name;
 	int id;
 	string password;
+    double balance;
 public:
 	//constructors:
 	Person() {
 		this->id = 0;
+        this->balance = 0;
 	}
-	Person(string n, int id, string p) {
-		if (Validation::checkname(n))
-			this->name = n;
+	Person(string name, int id, string password,double balance) {
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 
 		this->id = id;
 
-		if (Validation::checkPassword(p))
-			this->password = p;
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
 	}
 
 	//setters
-	void setName(string n) {
-		if (Validation::checkname(n))
-			this->name = n;
+	void setName(string name) {
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 	}
 	void setId(int id) {
 		this->id = id;
 	}
-	void setPassword(string p) {
-		if (Validation::checkPassword(p))
-			this->password = p;
+	void setPassword(string password) {
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
+	}
+	void setbalance(double balance) {
+		if (Validation::checkbalance(balance))
+			this->balance = balance;
+		else
+			cout << "Min balance is 1500";
+	}
+		void setSalary(double balance) {
+		if (Validation::checksalary(balance))
+			this->balance = balance;
+		else
+			cout << "Min Salary is 5000";
 	}
 	//Getters:
 	string getName() {
@@ -105,6 +123,9 @@ public:
 	string getPassword() {
 		return password;
 	}
+	double getbalance() {
+		return balance;
+	}
 	//Methods:
 
 	//Destructor
@@ -113,46 +134,37 @@ public:
 	}
 };
 
-
-
+//===================================================================================
+//Client Class
 class Client:public Person {
 private:
-	double balance;
+
 public:
 	Client() {
-		this->balance = 0;
+
 	}
-	Client(int id, string n, string p, double b) {
-		if (Validation::checkname(n))
-			this->name = n;
+	Client(int id, string name, string password, double balance) :Person(name,id,password,balance){
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 
 		this->id = id;
 
-		if (Validation::checkPassword(p))
-			this->password = p;
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
 
-		if (Validation::checkbalance(b))
-			this->balance = b;
+		if (Validation::checkbalance(balance))
+			this->balance = balance;
 		else
 			cout << "Min balance is 1500";
 	}
 	//setter
 
-	void setbalance(double b) {
-		if (Validation::checkbalance(b))
-			this->balance = b;
-		else
-			cout << "Min balance is 1500";
-	}
-
 	//getter
-	double getbalance() {
-		return balance;
-	}
+
 	//methods:
 	void deposit(double amount) {
 		balance += amount;
@@ -163,15 +175,96 @@ public:
 		else
 			cout << "Amount exceeded balance\n";
 	}
-	void transferTo(double amount, Client c1) {
-		if (balance >= amount)
+
+
+    void transfereTo(Client &c, double amount){
+		if (amount <= balance){
+			c.deposit(amount);
 			balance -= amount;
-		else
-			cout << "Amount exceeded balance\n";
-		c1.deposit(amount);
+		}
+		else{
+			cout << "Amount exceeded";
+		}
 	}
+
+
 	void checkBalance() {
 		cout << "Balance : " << balance << endl;
 	}
 
 };
+//===================================================================================
+//Employee Class:
+
+class Employee:public Person {
+private:
+    //Attributes
+	double balance;
+public:
+    //Constructors:
+	Employee() {
+	}
+	Employee(int id, string name, string password, double balance) :Person(name,id,password,balance){
+		if (Validation::checkname(name))
+			this->name = name;
+		else
+			cout << "name must be alphabetic chars and min size 5 and max size 20";
+
+		this->id = id;
+
+		if (Validation::checkPassword(password))
+			this->password = password;
+		else
+			cout << " Password must be with min size 8 and max size 20";
+
+		if (Validation::checksalary(balance))
+			this->balance = balance;
+		else
+			cout << "Min Salary is 5000";
+	}
+	//Setters:
+
+	//Getters:
+
+
+};
+//===================================================================================
+//Admin Class:
+class Admin:public Person {
+private:
+    //Attributes
+public:
+    //Constructors:
+	Admin() {
+
+	}
+		Admin(int id, string name, string password, double balance) :Person(name,id,password,balance){
+		if (Validation::checkname(name))
+			this->name = name;
+		else
+			cout << "name must be alphabetic chars and min size 5 and max size 20";
+
+		this->id = id;
+
+		if (Validation::checkPassword(password))
+			this->password = password;
+		else
+			cout << " Password must be with min size 8 and max size 20";
+
+		if (Validation::checksalary(balance))
+			this->balance = balance;
+		else
+			cout << "Min Salary is 5000";
+	}
+	//Setters:
+	void setSalary(double balance) {
+		if (Validation::checksalary(balance))
+			this->balance = balance;
+		else
+			cout << "Min Salary is 5000";
+	}
+	//Getters:
+
+
+};
+//===================================================================================
