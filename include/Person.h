@@ -193,7 +193,7 @@ public:
 //Employee Class:
 
 class Employee:public Person {
-private:
+protected:
     //Attributes
     double salary;
 public:
@@ -225,19 +225,19 @@ public:
 
 
 };
+//
 //===================================================================================
 //Admin Class:
-class Admin:public Person {
+class Admin:public Employee {
 private:
-    //Attributes
-        double salary;
+    //Attributes:
+
 public:
     //Constructors:
 	Admin() {
-        this->salary = 0;
 
 	}
-		Admin(int id, string name, string password, double balance) :Person(name,id,password,balance){
+		Admin(int id, string name, string password, double balance) :Employee(){
 		if (Validation::checkname(name))
 			this->name = name;
 		else
@@ -256,12 +256,7 @@ public:
 			cout << "Min Salary is 5000";
 	}
 	//Setters:
-	void setSalary(double salary) {
-		if (Validation::checksalary(salary))
-			this->salary = salary;
-		else
-			cout << "Min Salary is 5000";
-	}
+
 	//Getters:
 
 
