@@ -65,6 +65,7 @@ protected:
 	int id;
 	string password;
     double balance;
+
 public:
 	//constructors:
 	Person() {
@@ -107,12 +108,7 @@ public:
 		else
 			cout << "Min balance is 1500";
 	}
-		void setSalary(double balance) {
-		if (Validation::checksalary(balance))
-			this->balance = balance;
-		else
-			cout << "Min Salary is 5000";
-	}
+
 	//Getters:
 	string getName() {
 		return name;
@@ -199,10 +195,11 @@ public:
 class Employee:public Person {
 private:
     //Attributes
-	double balance;
+    double salary;
 public:
     //Constructors:
 	Employee() {
+        this->salary = 0;
 	}
 	Employee(int id, string name, string password, double balance) :Person(name,id,password,balance){
 		if (Validation::checkname(name))
@@ -217,8 +214,8 @@ public:
 		else
 			cout << " Password must be with min size 8 and max size 20";
 
-		if (Validation::checksalary(balance))
-			this->balance = balance;
+		if (Validation::checksalary(salary))
+			this->salary = salary;
 		else
 			cout << "Min Salary is 5000";
 	}
@@ -233,9 +230,11 @@ public:
 class Admin:public Person {
 private:
     //Attributes
+        double salary;
 public:
     //Constructors:
 	Admin() {
+        this->salary = 0;
 
 	}
 		Admin(int id, string name, string password, double balance) :Person(name,id,password,balance){
@@ -257,9 +256,9 @@ public:
 			cout << "Min Salary is 5000";
 	}
 	//Setters:
-	void setSalary(double balance) {
-		if (Validation::checksalary(balance))
-			this->balance = balance;
+	void setSalary(double salary) {
+		if (Validation::checksalary(salary))
+			this->salary = salary;
 		else
 			cout << "Min Salary is 5000";
 	}
