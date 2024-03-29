@@ -29,7 +29,7 @@ public:
 			if (p[i] >= 'A' && p[i] <= 'Z' || p[i] >= 'a' && p[i] <= 'z')
 				count++;
 		}
-		if (count < 5) {
+		if (count < 8) {
 			return false;
 		}
 		else if (count > 20) {
@@ -65,33 +65,33 @@ public:
 	Person() {
 		this->id = 0;
 	}
-	Person(string n, int id, string p) {
-		if (Validation::checkname(n))
-			this->name = n;
+	Person(string name, int id, string password) {
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 
 		this->id = id;
 
-		if (Validation::checkPassword(p))
-			this->password = p;
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
 	}
 
 	//setters
 	void setName(string n) {
-		if (Validation::checkname(n))
-			this->name = n;
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 	}
 	void setId(int id) {
 		this->id = id;
 	}
-	void setPassword(string p) {
-		if (Validation::checkPassword(p))
-			this->password = p;
+	void setPassword(string password) {
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
 	}
@@ -119,24 +119,25 @@ class Client:public Person {
 private:
 	double balance;
 public:
+    //constructors:
 	Client() {
 		this->balance = 0;
 	}
-	Client(int id, string n, string p, double b) {
-		if (Validation::checkname(n))
-			this->name = n;
+	Client(int id, string n, string p, double b):Person(id ,name,password) {
+		if (Validation::checkname(name))
+			this->name = name;
 		else
 			cout << "name must be alphabetic chars and min size 5 and max size 20";
 
 		this->id = id;
 
-		if (Validation::checkPassword(p))
-			this->password = p;
+		if (Validation::checkPassword(password))
+			this->password = password;
 		else
 			cout << " Password must be with min size 8 and max size 20";
 
-		if (Validation::checkbalance(b))
-			this->balance = b;
+		if (Validation::checkbalance(balance))
+			this->balance = balance;
 		else
 			cout << "Min balance is 1500";
 	}
@@ -144,7 +145,7 @@ public:
 
 	void setbalance(double b) {
 		if (Validation::checkbalance(b))
-			this->balance = b;
+			this->balance = balance;
 		else
 			cout << "Min balance is 1500";
 	}
