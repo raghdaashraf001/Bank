@@ -188,6 +188,12 @@ public:
 		cout << "Balance : " << balance << endl;
 	}
 
+	void display() {
+		cout << "name : " << name << endl;
+		cout << "password : " << password << endl;
+		cout << "id : " << id << endl;
+
+	}
 };
 //===================================================================================
 //Employee Class:
@@ -224,6 +230,13 @@ public:
 	//Getters:
 
 
+	//methods:
+	void display() {
+		cout << "name : " << name << endl;
+		cout << "password : " << password << endl;
+		cout << "id : " << id << endl;
+
+	}
 };
 
 //===================================================================================
@@ -260,5 +273,12 @@ public:
 	//Getters:
 
 
+	//methods:
+		void display() {
+			cout << "name : " << name << endl;
+			cout << "password : " << password << endl;
+			cout << "id : " << id << endl;
+
+		}
 };
 //===================================================================================
