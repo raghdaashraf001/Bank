@@ -11,15 +11,54 @@
 1710990883 source:c:\users\eslam\desktop\bank-system\bank\src\person.cpp
 	"Person.h"
 
-1711679323 source:c:\users\eslam\desktop\new folder\bank\main.cpp
+1712182915 source:c:\users\eslam\desktop\new folder\bank\main.cpp
 	<iostream>
 	<string>
 	"Person.h"
+	"Validation.h"
+	"Employee.h"
+	"Admin.h"
+	"Client.h"
 
-1711684446 c:\users\eslam\desktop\new folder\bank\include\person.h
+1712185092 c:\users\eslam\desktop\new folder\bank\include\person.h
 	<iostream>
 	<string>
+	"Validation.h"
 
 1711674014 source:c:\users\eslam\desktop\new folder\bank\src\person.cpp
 	"Person.h"
+
+1712182250 c:\users\eslam\desktop\new folder\bank\include\validation.h
+	<iostream>
+	<string>
+
+1712182312 source:c:\users\eslam\desktop\new folder\bank\src\validation.cpp
+	"Validation.h"
+
+1712186285 c:\users\eslam\desktop\new folder\bank\include\client.h
+	<iostream>
+	<string>
+	"Person.h"
+	"Validation.h"
+
+1712182651 source:c:\users\eslam\desktop\new folder\bank\src\client.cpp
+	"Client.h"
+
+1712182827 source:c:\users\eslam\desktop\new folder\bank\src\employee.cpp
+	"Employee.h"
+
+1712186814 c:\users\eslam\desktop\new folder\bank\include\employee.h
+	<iostream>
+	<string>
+	"Person.h"
+	"Validation.h"
+
+1712187080 c:\users\eslam\desktop\new folder\bank\include\admin.h
+	<iostream>
+	<string>
+	"Employee.h"
+	"Validation.h"
+
+1712182915 source:c:\users\eslam\desktop\new folder\bank\src\admin.cpp
+	"Admin.h"
 
