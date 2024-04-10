@@ -9,7 +9,7 @@ using namespace std;
 //Person Class:
 class Person
 {
-protected:
+public:
 	//Attributes:
 	string name,password;
 	int id;

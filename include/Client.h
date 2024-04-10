@@ -9,7 +9,7 @@ using namespace std;
 
 //Client Class
 class Client:public Person {
-private:
+public:
     double balance;
 
 public:
