@@ -3,6 +3,8 @@
 #include <string>
 #include "Person.h"
 #include "Validation.h"
+#include "Client.h"
+#include <fstream>
 using namespace std;
 
 
@@ -12,6 +14,7 @@ class Employee:public Person {
 protected:
     //Attributes
     double salary;
+    Client client;
 public:
     //Constructors:
 	Employee() :Person(){
@@ -37,4 +40,5 @@ public:
 		Person::display();
 		cout << "Salary : " << salary << endl;
 	}
+
 };

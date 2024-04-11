@@ -58,7 +58,7 @@ public:
     is.close();
 	}
 	//Methods:
-        void addClient(){
+        string addClient(){
 
     FileManger client;
     client.name="Raghda";

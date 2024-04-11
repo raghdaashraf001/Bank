@@ -11,7 +11,7 @@
 1710990883 source:c:\users\eslam\desktop\bank-system\bank\src\person.cpp
 	"Person.h"
 
-1712776841 source:c:\users\eslam\desktop\new folder\bank\main.cpp
+1712852214 source:c:\users\eslam\desktop\new folder\bank\main.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -20,6 +20,7 @@
 	"Employee.h"
 	"FileManger.h"
 	"Admin.h"
+	<iomanip>
 	"Client.h"
 
 1712602189 c:\users\eslam\desktop\new folder\bank\include\person.h
@@ -49,11 +50,13 @@
 1712182827 source:c:\users\eslam\desktop\new folder\bank\src\employee.cpp
 	"Employee.h"
 
-1712186814 c:\users\eslam\desktop\new folder\bank\include\employee.h
+1712779781 c:\users\eslam\desktop\new folder\bank\include\employee.h
 	<iostream>
 	<string>
 	"Person.h"
 	"Validation.h"
+	"Client.h"
+	<fstream>
 
 1712187080 c:\users\eslam\desktop\new folder\bank\include\admin.h
 	<iostream>
@@ -67,7 +70,7 @@
 1712362748 source:c:\users\eslam\desktop\new folder\bank\src\filemanger.cpp
 	"FileManger.h"
 
-1712777186 c:\users\eslam\desktop\new folder\bank\include\filemanger.h
+1712852109 c:\users\eslam\desktop\new folder\bank\include\filemanger.h
 	<iostream>
 	<string>
 	"Client.h"
@@ -75,4 +78,14 @@
 	"Admin.h"
 	<fstream>
 	"Validation.h"
+
+1712849560 source:c:\users\eslam\desktop\new folder\bank\src\fileshelper.cpp
+	"FilesHelper.h"
+
+1712849572 c:\users\eslam\desktop\new folder\bank\include\fileshelper.h
+	<iostream>
+	<string>
+	"Validation.h"
+	<iomanip>
+	<fstream>
 
