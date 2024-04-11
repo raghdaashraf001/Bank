@@ -18,6 +18,8 @@ class FilesHelper
         FilesHelper();
 
         //Methods:
+
+
         static int getLast( ){
 
         ifstream is;
