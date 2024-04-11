@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Client.h"
@@ -5,6 +6,7 @@
 #include "Admin.h"
 #include <fstream>
 #include "Validation.h"
+#include "FilesHelper.h"
 
 using namespace std;
 

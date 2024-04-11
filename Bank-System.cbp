@@ -38,6 +38,7 @@
 		<Unit filename="include/Client.h" />
 		<Unit filename="include/Employee.h" />
 		<Unit filename="include/FileManger.h" />
+		<Unit filename="include/FilesHelper.h" />
 		<Unit filename="include/Person.h" />
 		<Unit filename="include/Validation.h" />
 		<Unit filename="main.cpp" />
@@ -45,6 +46,7 @@
 		<Unit filename="src/Client.cpp" />
 		<Unit filename="src/Employee.cpp" />
 		<Unit filename="src/FileManger.cpp" />
+		<Unit filename="src/FilesHelper.cpp" />
 		<Unit filename="src/Person.cpp" />
 		<Unit filename="src/Validation.cpp" />
 		<Extensions>
