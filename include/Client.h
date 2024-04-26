@@ -3,6 +3,7 @@
 #include <string>
 #include "Person.h"
 #include "Validation.h"
+#include <vector>
 
 using namespace std;
 
@@ -17,17 +18,17 @@ public:
         this->balance = 0;
 	}
 	Client(string name,int id, string password, double balance) :Person(name,id,password){
-		setbalance( balance);
+		setBalance( balance);
 	}
 	//setter
-        void setbalance(double balance) {
+        void setBalance(double balance) {
 		if (Validation::checkbalance(balance))
 			this->balance = balance;
 		else
 			cout << "Min balance is 1500";
 	}
 	//getter
-        double getbalance() {
+        double getBalance() {
 		return balance;
 	}
 	//methods:
@@ -63,4 +64,7 @@ public:
 		cout << "Balance : " << balance << endl;
 
 	}
+
 };
+	static vector <Client>allClients;
+	static vector <Client>::iterator clIt;

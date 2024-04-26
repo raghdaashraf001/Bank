@@ -1,128 +1,52 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "Client.h"
-#include "Employee.h"
-#include "Admin.h"
-#include <fstream>
-#include "Validation.h"
+#include "DataSourceInterface.h"
 #include "FilesHelper.h"
 
-using namespace std;
-
-
-//FileManger Class
-class FileManger :public Client{
+class FileManager : public DataSourceInterface {
 private:
-	//Attributes:
-        string client;
-
-
+	static void addClient(Client client) {
+		FilesHelper::saveClient(client);
+	}
+	static void addEmployee(Employee employee) {
+		FilesHelper::saveEmployee("Employees.txt", "EmployeeLastId.txt", employee);
+	}
+	static void addAdmin(Admin admin) {
+		FilesHelper::saveEmployee("Admins.txt", "AdminLastId.txt", admin);
+	}
+	static void getAllClients() {
+		FilesHelper::getClients();
+	}
+	static void getAllEmployees() {
+		FilesHelper::getEmployees();
+	}
+	static void getAllAdmins() {
+		FilesHelper::getAdmins();
+	}
+	static void removeAllClients() {
+		FilesHelper::clearFile("Clients.txt", "ClientLastId.txt");
+	}
+	static void removeAllEmployees() {
+		FilesHelper::clearFile("Employees.txt", "EmployeeLastId.txt");
+	}
+	static void removeAllAdmins() {
+		FilesHelper::clearFile("Admins.txt", "AdminLastId.txt");
+	}
 public:
-    //constructors:
-    FileManger():Client() {
-        this->balance = 0;
+	static void getAllData() {
+		getAllClients();
+		getAllEmployees();
+		getAllAdmins();
 	}
-	FileManger(string name,int id, string password, double balance) :Client(name,id,password,balance){
-		setbalance( balance);
+	static void updateClients() {
+		removeAllClients();
+		for (clIt = allClients.begin(); clIt != allClients.end(); clIt++) addClient(*clIt);
 	}
-    //Setters:
-
-	//Getters:
-	string getAllClients() {
-
-    ifstream is;
-    is.open("Client.txt");
-    string line;
-    while(getline (is,line)){
-            cout<<line<<endl;
-    }
-    is.close();
+	static void updateEmployees() {
+		removeAllEmployees();
+		for (eIt = allEmployees.begin(); eIt != allEmployees.end(); eIt++) addEmployee(*eIt);
 	}
-
-	string getAllEmployees() {
-	     ifstream is;
-    is.open("Employee.txt");
-    string line;
-    while(getline (is,line)){
-            cout<<line<<endl;
-    }
-    is.close();
+	static void updateAdmins() {
+		removeAllAdmins();
+		for (aIt = allAdmins.begin(); aIt != allAdmins.end(); aIt++) addAdmin(*aIt);
 	}
-
-	string getAllAdmins() {
-	     ifstream is;
-    is.open("Admin.txt");
-    string line;
-    while(getline (is,line)){
-            cout<<line<<endl;
-    }
-    is.close();
-	}
-	//Methods:
-        string addClient(){
-
-    FileManger client;
-    client.name="Raghda";
-    client.id=101;
-    client.password="10101";
-    client.balance=4000.50;
-
-
-            ofstream c;
-            c.open("Client.txt",ios::app);
-            c<<client.name<<" , "<<client.id<<" , "<< client.password<<" , "<<client.balance<<endl;
-            c.close();
-
-        }
-        void addEmployee(){
-
-      FileManger employee;
-    employee.name="employee1";
-    employee.id=555;
-    employee.password="505050";
-    employee.balance=40000.50;
-
-
-            ofstream e;
-            e.open("Employee.txt",ios::app);
-            e<<employee.name<<" , "<<employee.id<<" , "<< employee.password<<" , "<<employee.balance<<endl;
-            e.close();
-
-
-        }
-        void addAdmin(){
-         FileManger admin;
-    admin.name="admin1";
-    admin.id=665;
-    admin.password="554546";
-    admin.balance=3500.50;
-
-
-            ofstream a;
-            a.open("Admin.txt",ios::app);
-            a<<admin.name<<" , "<<admin.id<<" , "<< admin.password<<" , "<<admin.balance<<endl;
-            a.close();
-
-        }
-        string removeAllClients(){
-            std::ofstream ofs;
-            ofs.open("Client.txt", ofstream::out | ofstream::trunc);
-            ofs.close();
-            return "All Clients Have Been Deleted!";
-
-        }
-        string removeAllEmployees(){
-            std::ofstream ofs;
-            ofs.open("Employee.txt", ofstream::out | ofstream::trunc);
-            ofs.close();
-            return "All Employees Have Been Deleted!";
-
-        }
-        string removeAllAdmins(){
-            std::ofstream ofs;
-            ofs.open("Admin.txt", ofstream::out | ofstream::trunc);
-            ofs.close();
-            return "All Admins Have Been Deleted!";
-        }
 };
