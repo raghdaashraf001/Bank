@@ -55,4 +55,54 @@ public:
 		else
 			return true;
 	}
+
+
+    static string enterName(){
+    string name;
+    system("cls");
+    cout<<"Enter Name: ";
+    cin>>name;
+    while (!validatename(name)){
+    system("cls");
+    cout<<"Invalid Name! \n";
+    cout<<"Name Must Be 5 To 20 Alphabetic Characters. \n"<<endl;
+    cout<<"Enter name \n";
+    cin>>name;
+    }
+    return name;
+    }
+
+
+
+
+     static string enterPassword(){
+    string password;
+    system("cls");
+    cout<<"Enter Password: ";
+    cin>>password;
+    while (!validatename(password)){
+    system("cls");
+    cout<<"Invalid Password! \n";
+    cout<<"Password Must Be 8 To 20 Characters. \n"<<endl;
+    cout<<"Enter Password \n";
+    cin>>password;
+    }
+    return password;
+    }
+
+     static double enterBalance(){
+    double balance;
+    cout<<"Enter Balance: ";
+    cin>>balance;
+
+    /*while (!validatename(balance)){
+    system("cls");
+    cout<<"Invalid Balance! \n";
+    cout<<"Balance Must Be 8 To 20 Characters. \n"<<endl;
+    cout<<"Enter Balance \n";
+    cin>>balance;
+    }
+    return balance;
+    }
+    */
 };
