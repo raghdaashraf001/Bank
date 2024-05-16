@@ -39,6 +39,7 @@
 		<Unit filename="include/ClientManager .h" />
 		<Unit filename="include/DataSourceInterface.h" />
 		<Unit filename="include/Employee.h" />
+		<Unit filename="include/EmployeeManager .h" />
 		<Unit filename="include/FileManger.h" />
 		<Unit filename="include/FilesHelper.h" />
 		<Unit filename="include/Parser.h" />
@@ -50,6 +51,7 @@
 		<Unit filename="src/ClientManager .cpp" />
 		<Unit filename="src/DataSourceInterface.cpp" />
 		<Unit filename="src/Employee.cpp" />
+		<Unit filename="src/EmployeeManager .cpp" />
 		<Unit filename="src/FileManger.cpp" />
 		<Unit filename="src/FilesHelper.cpp" />
 		<Unit filename="src/Parser.cpp" />

@@ -63,11 +63,11 @@ public:
     cout<<"Enter Name: ";
     cin>>name;
     while (!validatename(name)){
-    system("cls");
-    cout<<"Invalid Name! \n";
-    cout<<"Name Must Be 5 To 20 Alphabetic Characters. \n"<<endl;
-    cout<<"Enter name \n";
-    cin>>name;
+        system("cls");
+        cout<<"Invalid Name! \n";
+        cout<<"Name Must Be 5 To 20 Alphabetic Characters. \n"<<endl;
+        cout<<"Enter name \n";
+        cin>>name;
     }
     return name;
     }
@@ -81,11 +81,11 @@ public:
     cout<<"Enter Password: ";
     cin>>password;
     while (!validatename(password)){
-    system("cls");
-    cout<<"Invalid Password! \n";
-    cout<<"Password Must Be 8 To 20 Characters. \n"<<endl;
-    cout<<"Enter Password \n";
-    cin>>password;
+        system("cls");
+        cout<<"Invalid Password! \n";
+        cout<<"Password Must Be 8 To 20 Characters. \n"<<endl;
+        cout<<"Enter Password \n";
+        cin>>password;
     }
     return password;
     }
@@ -94,15 +94,27 @@ public:
     double balance;
     cout<<"Enter Balance: ";
     cin>>balance;
-
-    /*while (!validatename(balance)){
-    system("cls");
-    cout<<"Invalid Balance! \n";
-    cout<<"Balance Must Be 8 To 20 Characters. \n"<<endl;
-    cout<<"Enter Balance \n";
-    cin>>balance;
-    }
+    while (balance<1500){
+        system("cls");
+        cout<<"Invalid Balance!\n";
+        cout<<"Balance must be at least 1500.\n"<<endl;
+        cout<<"Enter Balance\n";
+        cin>>balance;
+        }
     return balance;
+
+
+    static double enterSalary(){
+    double salary;
+    cout <<"Enter Aalary: ";
+    cin>>salary;
+    while (salary<5000){
+        system("cls");
+        cout <<"Invalid Salary!\n ";
+        cout <<"Salary must be at least 5000.\n "<<endl;
+        cout <<"Enter Salary: ";
+        cin>>salary;
     }
-    */
+        return salary;
+
 };
